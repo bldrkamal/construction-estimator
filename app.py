@@ -5,7 +5,7 @@ from munch import Munch
 from viktor import Color
 from viktor import ViktorController, UserError
 from viktor.parametrization import (
-    ViktorParametrization, NumberField
+    ViktorParametrization, NumberField ,Text
     
 )
 from viktor.geometry import( Point, mirror_object,
@@ -24,6 +24,9 @@ from viktor.views import (
 
 class Parametrization(ViktorParametrization):
      # Define the input fields
+     intro_text = Text(
+        "# Footing design and material estimator\n"
+        "This app is still under development"
      length=NumberField('Length(L)', min=0, max=10,default=2, suffix="m")
      Width=NumberField('Width(W)', min=0, max=10,default=2, suffix="m")
      heigth=NumberField('Thickness', min=0, max=700, default=300,suffix="mm")
